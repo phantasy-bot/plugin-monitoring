@@ -1,10 +1,22 @@
 {
   "slug": "plugin-monitoring",
   "packageName": "@phantasy/plugin-monitoring",
+  "displayName": "Monitoring",
+  "description": "Installable monitoring plugin surface for Phantasy",
+  "workspace": "operations",
+  "extensionKind": "capability",
+  "category": "observability",
+  "tags": [
+    "metrics",
+    "monitoring"
+  ],
+  "permissions": [],
+  "visibility": "public",
   "repoUrl": "https://github.com/phantasy-bot/plugin-monitoring",
   "sourceOfTruth": "monorepo-wrapper",
   "syncMode": "dist-package",
   "phase": "published-wrapper",
   "repoExists": true,
-  "exportedAt": "2026-03-15T15:11:20.480Z"
+  "npmPublished": true,
+  "exportedAt": "2026-03-15T15:23:37.109Z"
 }

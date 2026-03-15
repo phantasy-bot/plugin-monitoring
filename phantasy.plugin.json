@@ -1,0 +1,25 @@
+{
+  "name": "@phantasy/plugin-monitoring",
+  "version": "2.0.0",
+  "description": "Installable monitoring plugin surface for Phantasy",
+  "displayName": "Monitoring",
+  "workspace": "operations",
+  "extensionKind": "capability",
+  "adminSurface": {
+    "tabId": "monitoring",
+    "label": "Monitoring",
+    "section": "operations",
+    "workspace": "operations",
+    "kind": "native",
+    "entry": "/admin-ui/index.js",
+    "assetRoot": "admin-ui-dist",
+    "keywords": [
+      "logs",
+      "metrics",
+      "analytics",
+      "stats"
+    ],
+    "dashboardIcon": "analyticsTile2",
+    "dashboardPromoted": false
+  }
+}

@@ -13,10 +13,88 @@
   "permissions": [],
   "visibility": "public",
   "repoUrl": "https://github.com/phantasy-bot/plugin-monitoring",
-  "sourceOfTruth": "monorepo-wrapper",
-  "syncMode": "dist-package",
-  "phase": "published-wrapper",
+  "sourceOfTruth": "standalone-repo",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
   "repoExists": true,
   "npmPublished": true,
-  "exportedAt": "2026-03-15T15:23:37.109Z"
+  "adminAssetDir": "src/plugins/monitoring/admin-ui-dist",
+  "phantasy": {
+    "displayName": "Monitoring",
+    "category": "observability",
+    "tags": [
+      "metrics",
+      "monitoring"
+    ],
+    "workspace": "operations",
+    "extensionKind": "capability",
+    "permissions": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": true,
+    "adminSurface": {
+      "tabId": "monitoring",
+      "label": "Monitoring",
+      "section": "operations",
+      "workspace": "operations",
+      "kind": "native",
+      "entry": "/admin-ui/index.js",
+      "assetRoot": "admin-ui-dist",
+      "keywords": [
+        "logs",
+        "metrics",
+        "analytics",
+        "stats"
+      ],
+      "dashboardIcon": "analyticsTile2",
+      "dashboardPromoted": false
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "sourceExtract": {
+    "files": [
+      {
+        "sourcePath": "src/plugins/monitoring-plugin.ts",
+        "targetPath": "src/index.ts",
+        "replacements": [
+          {
+            "from": "export { default } from \"@/plugins/monitoring/monitoring-plugin\";",
+            "to": "export { default } from \"./monitoring-plugin\";"
+          }
+        ]
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/monitoring-plugin.ts",
+        "targetPath": "src/monitoring-plugin.ts"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/index.ts",
+        "targetPath": "src/admin-ui/index.ts"
+      }
+    ],
+    "replacements": [
+      {
+        "from": "import { BasePlugin, DashboardWidget } from \"@/plugins/base-plugin\";",
+        "to": "import { BasePlugin, DashboardWidget } from \"@phantasy/agent/plugins\";"
+      },
+      {
+        "from": "import { getActivityTracker } from \"@/services/utilities/activity-tracking-service\";",
+        "to": "import { getActivityTracker } from \"@phantasy/agent/plugin-runtime\";"
+      },
+      {
+        "from": "import {\n  registerPluginAdminSurface,\n  type PluginAdminNativeMountContext,\n} from \"../../admin-ui/plugin-admin-surface-contract\";",
+        "to": "import {\n  registerPluginAdminSurface,\n  type PluginAdminNativeMountContext,\n} from \"@phantasy/agent/plugin-admin-ui\";"
+      }
+    ]
+  },
+  "exportedAt": "2026-03-15T18:49:01.510Z"
 }

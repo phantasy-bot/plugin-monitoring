@@ -1,17 +1,24 @@
-# @phantasy/plugin-monitoring
+# Monitoring
 
-Installable monitoring plugin surface for Phantasy.
+Installable monitoring plugin surface for Phantasy
 
-## Install
+Package: `@phantasy/plugin-monitoring`
+Repo: https://github.com/phantasy-bot/plugin-monitoring
+Phase: `source-extracted`
+
+## Status
+
+This repo is now seeded with real plugin source extracted from the Phantasy monorepo. It is no longer just a blank scaffold, but it may still need seam cleanup before it can become the sole implementation path.
+
+## Development
 
 ```bash
-npm install @phantasy/plugin-monitoring
+npm install
+npm run typecheck
+npm run build
 ```
 
-## Use
+## Extraction Goal
 
-```ts
-import { MonitoringPlugin } from "@phantasy/plugin-monitoring";
-```
+Continue removing deep monorepo-only dependencies so releases can happen directly from this repo.
 
-This package wraps the stable `@phantasy/agent/plugin-monitoring` subpath so the monitoring surface can ship as a first-class plugin package.

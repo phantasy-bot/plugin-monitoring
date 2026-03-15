@@ -1,0 +1,10 @@
+{
+  "slug": "plugin-monitoring",
+  "packageName": "@phantasy/plugin-monitoring",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-monitoring",
+  "sourceOfTruth": "monorepo-wrapper",
+  "syncMode": "dist-package",
+  "phase": "published-wrapper",
+  "repoExists": true,
+  "exportedAt": "2026-03-15T15:11:20.480Z"
+}

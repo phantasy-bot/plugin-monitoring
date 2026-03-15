@@ -1,0 +1,85 @@
+{
+  "name": "@phantasy/plugin-monitoring",
+  "version": "2.0.0",
+  "description": "Installable monitoring plugin surface for Phantasy",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "admin-ui-dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "ai",
+    "agent",
+    "plugin",
+    "monitoring",
+    "observability"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phantasy-bot/agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phantasy-bot/agent/issues"
+  },
+  "homepage": "https://github.com/phantasy-bot/agent#readme",
+  "dependencies": {
+    "@phantasy/agent": "^2.0.0"
+  },
+  "phantasy": {
+    "displayName": "Monitoring",
+    "category": "observability",
+    "tags": [
+      "metrics",
+      "monitoring"
+    ],
+    "workspace": "operations",
+    "extensionKind": "capability",
+    "permissions": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": true,
+    "adminSurface": {
+      "tabId": "monitoring",
+      "label": "Monitoring",
+      "section": "operations",
+      "workspace": "operations",
+      "kind": "native",
+      "entry": "/admin-ui/index.js",
+      "assetRoot": "admin-ui-dist",
+      "keywords": [
+        "logs",
+        "metrics",
+        "analytics",
+        "stats"
+      ],
+      "dashboardIcon": "analyticsTile2",
+      "dashboardPromoted": false
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  }
+}

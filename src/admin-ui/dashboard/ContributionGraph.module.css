@@ -1,0 +1,231 @@
+.container {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.stats span {
+  padding: 4px 12px;
+  background: rgba(203, 203, 204, 0.05);
+  border: 1px solid rgba(203, 203, 204, 0.1);
+  border-radius: 4px;
+}
+
+.graphWrapper {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.weekdays {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90px;
+  margin-top: 30px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  width: 30px;
+}
+
+.graphContent {
+  flex: 1;
+  position: relative;
+  width: 100%;
+}
+
+.months {
+  display: flex;
+  gap: 2px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.monthAnchor {
+  position: relative;
+  width: 10px;
+  flex: 0 0 10px;
+}
+
+.monthLabel {
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.graph {
+  display: flex;
+  gap: 2px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.day {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.day:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.empty {
+  background: transparent;
+  cursor: default;
+}
+
+.empty:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.level0 {
+  background: rgba(203, 203, 204, 0.05);
+  border: 1px solid rgba(203, 203, 204, 0.1);
+}
+
+.level1 {
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.level2 {
+  background: rgba(0, 255, 136, 0.4);
+  border: 1px solid rgba(0, 255, 136, 0.5);
+}
+
+.level3 {
+  background: rgba(0, 255, 136, 0.6);
+  border: 1px solid rgba(0, 255, 136, 0.7);
+}
+
+.level4 {
+  background: rgba(0, 255, 136, 0.8);
+  border: 1px solid var(--success);
+  box-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 15px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.yearSelector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.yearButton {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.yearButton:hover:not(:disabled) {
+  background: var(--bg-tertiary);
+  border-color: var(--color-accent-primary);
+}
+
+.yearButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.yearLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 50px;
+  text-align: center;
+}
+
+.legend .day {
+  cursor: default;
+}
+
+.legend .day:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.tooltip {
+  position: fixed;
+  left: var(--contribution-tooltip-left);
+  top: var(--contribution-tooltip-top);
+  transform: translateX(-50%);
+  background: var(--bg-primary);
+  border: 1px solid var(--success);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  z-index: var(--z-tooltip);
+  pointer-events: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip strong {
+  color: var(--success);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}

@@ -79,6 +79,42 @@
       {
         "sourcePath": "src/plugins/monitoring/admin-ui/index.ts",
         "targetPath": "src/admin-ui/index.ts"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/AnalyticsDashboard.tsx",
+        "targetPath": "src/admin-ui/dashboard/AnalyticsDashboard.tsx"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/AnalyticsDashboard.module.css",
+        "targetPath": "src/admin-ui/dashboard/AnalyticsDashboard.module.css"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/ContributionGraph.tsx",
+        "targetPath": "src/admin-ui/dashboard/ContributionGraph.tsx"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/ContributionGraph.module.css",
+        "targetPath": "src/admin-ui/dashboard/ContributionGraph.module.css"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/DashboardWidgetPrimitives.module.css",
+        "targetPath": "src/admin-ui/dashboard/DashboardWidgetPrimitives.module.css"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/MonitoringWidgetBody.tsx",
+        "targetPath": "src/admin-ui/dashboard/MonitoringWidgetBody.tsx"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/SemiGauge.tsx",
+        "targetPath": "src/admin-ui/dashboard/SemiGauge.tsx"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/SemiGauge.module.css",
+        "targetPath": "src/admin-ui/dashboard/SemiGauge.module.css"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/Sparkline.tsx",
+        "targetPath": "src/admin-ui/dashboard/Sparkline.tsx"
       }
     ],
     "replacements": [
@@ -87,8 +123,20 @@
         "to": "import { BasePlugin, DashboardWidget } from \"@phantasy/agent/plugins\";"
       },
       {
-        "from": "import { getActivityTracker } from \"@/services/utilities/activity-tracking-service\";",
-        "to": "import { getActivityTracker } from \"@phantasy/agent/plugin-runtime\";"
+        "from": "\"@/plugin-admin-ui\"",
+        "to": "\"@phantasy/agent/plugin-admin-ui\""
+      },
+      {
+        "from": "import type { DailyActivitySummary } from \"@/plugin-admin-ui\";",
+        "to": "import type { DailyActivitySummary } from \"@phantasy/agent/plugin-admin-ui\";"
+      },
+      {
+        "from": "import type { ContributionData } from \"@/plugin-admin-ui\";",
+        "to": "import type { ContributionData } from \"@phantasy/agent/plugin-admin-ui\";"
+      },
+      {
+        "from": "\"@/plugin-runtime\"",
+        "to": "\"@phantasy/agent/plugin-runtime\""
       },
       {
         "from": "import {\n  registerPluginAdminSurface,\n  type PluginAdminNativeMountContext,\n} from \"../../admin-ui/plugin-admin-surface-contract\";",
@@ -96,5 +144,5 @@
       }
     ]
   },
-  "exportedAt": "2026-03-15T18:49:01.510Z"
+  "exportedAt": "2026-03-16T02:20:40.118Z"
 }

@@ -1,0 +1,277 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.periodSelector {
+  display: flex;
+  gap: 5px;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(203, 203, 204, 0.1);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.periodSelector button {
+  padding: 6px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.periodSelector button:hover {
+  color: var(--text-primary);
+}
+
+.periodSelector button.active {
+  background: var(--accent-primary);
+  color: var(--color-white);
+  border: 1px solid var(--accent-primary);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.statCard {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--color-light-gray);
+  margin-bottom: 5px;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statSubtext {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  margin-top: 5px;
+}
+
+.chartsSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.chartCard {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.chartCard h3 {
+  margin: 0 0 15px 0;
+  color: var(--text-primary);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.hourlyChart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 120px;
+  gap: 2px;
+}
+
+.hourBar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.bar {
+  --analytics-bar-size: 2px;
+  --analytics-bar-background: rgba(203, 203, 204, 0.6);
+  width: 100%;
+  height: var(--analytics-bar-size);
+  background: var(--analytics-bar-background);
+  border-radius: 2px 2px 0 0;
+  transition: all 0.3s ease;
+  min-height: 2px;
+}
+
+.hourBar:hover .bar {
+  background: var(--color-light-gray);
+  box-shadow: 0 0 10px rgba(203, 203, 204, 0.5);
+}
+
+.hourLabel {
+  font-size: 9px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.hourBar:nth-child(6n+1) .hourLabel {
+  color: var(--color-text-secondary);
+}
+
+.platformList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platformItem {
+  display: grid;
+  grid-template-columns: 80px 1fr 50px;
+  align-items: center;
+  gap: 10px;
+}
+
+.platformName {
+  font-size: 12px;
+  color: var(--color-text-primary);
+}
+
+.platformBar {
+  height: 20px;
+  background: rgba(1, 6, 7, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(203, 203, 204, 0.1);
+}
+
+.platformProgress {
+  width: var(--analytics-bar-size, 0%);
+  height: 100%;
+  background: var(--analytics-bar-background, linear-gradient(90deg, rgba(203, 203, 204, 0.8), rgba(203, 203, 204, 0.6)));
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.platformCount {
+  font-size: 12px;
+  color: var(--color-light-gray);
+  text-align: right;
+}
+
+.usersSection {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 16px 0 0 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.usersSection h3 {
+  margin: 0 0 15px 0;
+  color: var(--text-primary);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.usersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  font-family: var(--font-mono);
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(203, 203, 204, 0.02);
+  border: 1px solid rgba(203, 203, 204, 0.1);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.userItem:hover {
+  background: rgba(203, 203, 204, 0.05);
+  border-color: rgba(203, 203, 204, 0.3);
+}
+
+.userRank {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  min-width: 30px;
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.userName {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userActivity {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .chartsSection {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}

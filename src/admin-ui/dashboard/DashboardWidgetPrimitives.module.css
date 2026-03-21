@@ -1,0 +1,142 @@
+.overviewPanel {
+  margin-top: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rowBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.baselineRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fill {
+  flex: 1;
+  min-width: 0;
+}
+
+.metricMeta {
+  color: var(--text-secondary);
+}
+
+.metricValue {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.timestamp {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.itemCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+}
+
+.itemMetaRow {
+  display: flex;
+  gap: 8px;
+}
+
+.cardMain {
+  min-width: 0;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.statCard {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+}
+
+.statLabel {
+  color: var(--text-secondary);
+}
+
+.statValue {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.valueXl {
+  color: var(--text-primary);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.valueLg {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.chip {
+  padding: 2px 6px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  font-size: 12px;
+}
+
+.tip {
+  color: var(--text-secondary);
+}
+
+.link {
+  flex-shrink: 0;
+  color: var(--accent-primary);
+  font-size: 12px;
+}
+
+.statusBadge {
+  padding: 2px 6px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--bg-primary);
+  font-size: 12px;
+}

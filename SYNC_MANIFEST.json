@@ -1,0 +1,160 @@
+{
+  "slug": "plugin-monitoring",
+  "packageName": "@phantasy/plugin-monitoring",
+  "displayName": "Monitoring",
+  "description": "Installable monitoring plugin surface for Phantasy",
+  "workspace": "operations",
+  "extensionKind": "capability",
+  "category": "observability",
+  "tags": [
+    "metrics",
+    "monitoring"
+  ],
+  "permissions": [],
+  "visibility": "public",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-monitoring",
+  "sourceOfTruth": "standalone-repo",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
+  "repoExists": true,
+  "npmPublished": true,
+  "adminAssetDir": "src/plugins/monitoring/admin-ui-dist",
+  "phantasy": {
+    "displayName": "Monitoring",
+    "category": "observability",
+    "tags": [
+      "metrics",
+      "monitoring"
+    ],
+    "workspace": "operations",
+    "extensionKind": "capability",
+    "permissions": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": true,
+    "adminSurface": {
+      "tabId": "monitoring",
+      "label": "Monitoring",
+      "section": "operations",
+      "workspace": "operations",
+      "kind": "native",
+      "entry": "/admin-ui/index.js",
+      "assetRoot": "admin-ui-dist",
+      "keywords": [
+        "logs",
+        "metrics",
+        "analytics",
+        "stats"
+      ],
+      "dashboardIcon": "analyticsTile2",
+      "dashboardPromoted": false
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "sourceExtract": {
+    "files": [
+      {
+        "sourcePath": "src/plugins/monitoring-plugin.ts",
+        "targetPath": "src/index.ts",
+        "replacements": [
+          {
+            "from": "export { default } from \"@/plugins/monitoring/monitoring-plugin\";",
+            "to": "export { default } from \"./monitoring-plugin\";"
+          }
+        ]
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/monitoring-plugin.ts",
+        "targetPath": "src/monitoring-plugin.ts"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/plugin-metadata.ts",
+        "targetPath": "src/plugin-metadata.ts"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/index.ts",
+        "targetPath": "src/admin-ui/index.ts"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/AnalyticsDashboard.tsx",
+        "targetPath": "src/admin-ui/dashboard/AnalyticsDashboard.tsx"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/AnalyticsDashboard.module.css",
+        "targetPath": "src/admin-ui/dashboard/AnalyticsDashboard.module.css"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/ContributionGraph.tsx",
+        "targetPath": "src/admin-ui/dashboard/ContributionGraph.tsx"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/ContributionGraph.module.css",
+        "targetPath": "src/admin-ui/dashboard/ContributionGraph.module.css"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/DashboardWidgetPrimitives.module.css",
+        "targetPath": "src/admin-ui/dashboard/DashboardWidgetPrimitives.module.css"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/MonitoringWidgetBody.tsx",
+        "targetPath": "src/admin-ui/dashboard/MonitoringWidgetBody.tsx"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/SemiGauge.tsx",
+        "targetPath": "src/admin-ui/dashboard/SemiGauge.tsx"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/SemiGauge.module.css",
+        "targetPath": "src/admin-ui/dashboard/SemiGauge.module.css"
+      },
+      {
+        "sourcePath": "src/plugins/monitoring/admin-ui/dashboard/Sparkline.tsx",
+        "targetPath": "src/admin-ui/dashboard/Sparkline.tsx"
+      }
+    ],
+    "replacements": [
+      {
+        "from": "import { BasePlugin, DashboardWidget } from \"@/plugins/base-plugin\";",
+        "to": "import { BasePlugin, DashboardWidget } from \"@phantasy/agent/plugins\";"
+      },
+      {
+        "from": "\"@/plugin-admin-ui\"",
+        "to": "\"@phantasy/agent/plugin-admin-ui\""
+      },
+      {
+        "from": "import type { DailyActivitySummary } from \"@/plugin-admin-ui\";",
+        "to": "import type { DailyActivitySummary } from \"@phantasy/agent/plugin-admin-ui\";"
+      },
+      {
+        "from": "import type { ContributionData } from \"@/plugin-admin-ui\";",
+        "to": "import type { ContributionData } from \"@phantasy/agent/plugin-admin-ui\";"
+      },
+      {
+        "from": "\"@/plugin-runtime\"",
+        "to": "\"@phantasy/agent/plugin-runtime\""
+      },
+      {
+        "from": "\"@/plugins/monitoring/plugin-metadata\"",
+        "to": "\"./plugin-metadata\""
+      },
+      {
+        "from": "import type { RuntimePluginManifest } from \"@/plugins/types/phantasy-manifest\";",
+        "to": "import type { PluginManifest as RuntimePluginManifest } from \"@phantasy/agent/plugins\";"
+      },
+      {
+        "from": "import {\n  registerPluginAdminSurface,\n  type PluginAdminNativeMountContext,\n} from \"../../admin-ui/plugin-admin-surface-contract\";",
+        "to": "import {\n  registerPluginAdminSurface,\n  type PluginAdminNativeMountContext,\n} from \"@phantasy/agent/plugin-admin-ui\";"
+      }
+    ]
+  },
+  "exportedAt": "2026-03-21T21:31:38.268Z"
+}
